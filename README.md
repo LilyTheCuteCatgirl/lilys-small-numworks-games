@@ -8,7 +8,7 @@ Each game is compressed to use as little storage space as possible while remaini
 
 
 <!-- GAME_TABLE_START -->
-| Game | File Size |
+| Games | File Size |
 |---|---:|
 | [Chess](games/chess.py) | 10,402 bytes |
 | [Chrome Dino](games/chrome_dino.py) | 6,382 bytes |

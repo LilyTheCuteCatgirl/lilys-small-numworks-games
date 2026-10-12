@@ -24,7 +24,7 @@ def make_table(folder):
         ORDER.index(p.stem) if p.stem in ORDER else len(ORDER), p.name.lower()))
     if not scripts:
         raise RuntimeError('No .py games in ' + str(folder))
-    lines = ['| Game | File Size |', '|---|---:|']
+    lines = ['| Games | File Size |', '|---|---:|']
     total = 0
     for path in scripts:
         size = len(path.read_bytes())
