@@ -3,8 +3,7 @@ while i<8192:c[i]=(randint(100,255),randint(100,255),randint(100,255));i*=2
 def a(m,l):
  o=True
  while o:
-  q,j=randint(0,4),randint(0,4);p=1024;r=randint(1,2047)
-  while r>1:r//=2;p//=2
+  q,j=randint(0,4),randint(0,4);r=randint(0,19);p=2<<(r>15)+(r>18)
   if m[q][j][0]:continue
   else:m[q][j][0]=p;o=False
  drawtxt('Score : '+str(l),59,-2);draw(57,15,206,206,(0,0,0))
