@@ -7,7 +7,7 @@ Each game is compressed to use as little storage space as possible while remaini
 ## Available Games
 
 
-| Game | File Size |
+| Games | File Size |
 |---|---:|
 | Chess | 10,402 bytes |
 | Chrome Dino | 10,760 bytes |
