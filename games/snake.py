@@ -25,13 +25,17 @@ def m(u):
  return u
 def f():fill_rect(0,0,320,222,(255,255,255))
 def d():print('\n \n \n \n \n \n \n \n \n \n \n \n \n ')
-def h():draw_string('(DELETE to exit)',0,0);a([1,1,1,1,0,0,1,1,1,0,0,1,1,1,1],70,80,10,(0,204,0));fill_rect(95,80,2,4,(0,0,0));fill_rect(95,86,2,4,(0,0,0));fill_rect(100,84,4,2,(255,0,0));fill_rect(104,82,2,2,(255,0,0));fill_rect(104,86,2,2,(255,0,0));a([1,1,1,1,0,1,1,0,1,1,0,1,1,0,1],110,80,10,(0,0,0));a([1,1,1,1,0,1,1,1,1,1,0,1,1,0,1],150,80,10,(0,0,0));a([1,0,1,1,0,1,1,1,0,1,0,1,1,0,1],190,80,10,(0,0,0));a([1,1,1,1,0,0,1,1,1,1,0,0,1,1,1],230,80,10,(0,0,0))
+def h():draw_string('(DELETE to exit)',0,0);a(31183,70,80,10,(0,204,0));fill_rect(95,80,2,4,(0,0,0));fill_rect(95,86,2,4,(0,0,0));fill_rect(100,84,4,2,(255,0,0));fill_rect(104,82,2,2,(255,0,0));fill_rect(104,86,2,2,(255,0,0));U()
 def a(p,x,y,o,q):
  for s in range(5):
   for r in range(3):
-   if p[s*3+r]==1:fill_rect(x+r*o,y+s*o,o,o,q)
+   if p>>(14-s*3-r)&1:fill_rect(x+r*o,y+s*o,o,o,q)
+def U():
+ for i,v in enumerate((31597,31725,23469,31207)):a(v,110+40*i,80,10,(0,0,0))
+def X(i,r,s,o):
+ for j,(t,x,y)in enumerate((('Speed:'+str(r),50,140),('Power:+'+str(s),200,140),('Score:+'+str(o),50,170),('Play',220,170))):draw_string(t,x,y,b()if i==j+1 else'black','white')
 def l():
- f();a([1,1,1,1,0,1,1,0,1,1,0,1,1,0,1],110,80,10,(0,0,0));a([1,1,1,1,0,1,1,1,1,1,0,1,1,0,1],150,80,10,(0,0,0));a([1,0,1,1,0,1,1,1,0,1,0,1,1,0,1],190,80,10,(0,0,0));a([1,1,1,1,0,0,1,1,1,1,0,0,1,1,1],230,80,10,(0,0,0));t=[1,1,1,1,1,1,1,1,1,4,4,3,3,4,4,1,1];B=0;C=120;w=-110;A=120;u=1;D=0
+ f();U();t=[1,1,1,1,1,1,1,1,1,4,4,3,3,4,4,1,1];B=0;C=120;w=-110;A=120;u=1;D=0
  for i in range(len(t)):
   B=B+((t[i]==1)-(t[i]==3))*10;C=C+((t[i]==2)-(t[i]==4))*10
   if w<0:w=w+10
@@ -45,7 +49,7 @@ def l():
   if keydown(KEY_BACKSPACE):z=1
   sleep(0.1)
  if p==2 and z!=1:
-  fill_rect(0,130,300,60,(255,255,255));r=0.05;s=5;o=1;draw_string('Speed:'+str(r),50,140,b(),'white');draw_string('Power:+'+str(s),200,140);draw_string('Score:+'+str(o),50,170);draw_string('Play',220,170);p=1;sleep(0.2)
+  fill_rect(0,130,300,60,(255,255,255));r=0.05;s=5;o=1;X(1,r,s,o);p=1;sleep(0.2)
   while keydown(KEY_OK)!=True or p!=4:
    if keydown(KEY_RIGHT):p=p+1
    elif keydown(KEY_DOWN):p=p+2
@@ -54,15 +58,15 @@ def l():
    if p<0:p=0
    if p>4:p=4
    if p==1:
-    draw_string('Speed:'+str(r),50,140,b(),'white');draw_string('Power:+'+str(s),200,140);draw_string('Score:+'+str(o),50,170);draw_string('Play',220,170)
+    X(p,r,s,o)
     if keydown(KEY_OK):d();r=input('Speed:');h()
    elif p==2:
-    draw_string('Speed:'+str(r),50,140);draw_string('Power:+'+str(s),200,140,b(),'white');draw_string('Score:+'+str(o),50,170);draw_string('Play',220,170)
+    X(p,r,s,o)
     if keydown(KEY_OK):d();s=int(input('Power:+'));h()
    elif p==3:
-    draw_string('Speed:'+str(r),50,140);draw_string('Power:+'+str(s),200,140);draw_string('Score:+'+str(o),50,170,b(),'white');draw_string('Play',220,170)
+    X(p,r,s,o)
     if keydown(KEY_OK):d();o=int(input('Score:'));h()
-   elif p==4:draw_string('Speed:'+str(r),50,140);draw_string('Power:+'+str(s),200,140);draw_string('Score:+'+str(o),50,170);draw_string('Play',220,170,b(),'white')
+   elif p==4:X(p,r,s,o)
    if keydown(KEY_LEFTPARENTHESIS)and keydown(KEY_RIGHTPARENTHESIS)or q==1:draw_string('Dark mode enabled !',80,195);q=1
    if keydown(KEY_BACKSPACE):z=1;break
    sleep(0.1)
