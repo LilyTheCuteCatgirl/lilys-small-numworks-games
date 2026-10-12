@@ -21,14 +21,14 @@ Each game is compressed to use as little storage space as possible while remaini
 
 
 when on the website after making an account go in "My Scripts" and press new script
-![alt text](image.png)
+![alt text](readme_images\mainpage.png)
 
 
 ## copy the code from the game that you want into the websites code editor
 
-![alt text](<Screenshot 2026-10-12 180434.png>)
+![alt text](readme_images\myscripts.png)
 
-![](<Screenshot 2026-10-12 180803.png>)
+![](readme_images\loadgame.png)
 
 ## after doing this you can unplug your calculator
 to lanch a game go in python -> game.py click the three dots and click "execute program"
