@@ -10,8 +10,8 @@ The goal is to make each game as small as possible while keeping it fully playab
 |---|---:|
 | [Chess](games/chess.py) | 10,402 bytes |
 | [Chrome Dino](games/chrome_dino.py) | 6,382 bytes |
-| [Snake](games/snake.py) | 4,964 bytes |
-| [Flappy Bird](games/flappy_bird.py) | 4,433 bytes |
+| [Snake](games/snake.py) | 2,603 bytes |
+| [Flappy Bird](games/flappy_bird.py) | 3,709 bytes |
 | [2048](games/2048.py) | 1,754 bytes |
 | [Pac-Man](games/pacman.py) | 2,496 bytes |
 | [Tetris](games/tetris.py) | 2,232 bytes |
@@ -20,7 +20,7 @@ The goal is to make each game as small as possible while keeping it fully playab
 | [Space Invaders](games/space_invaders.py) | 1,620 bytes |
 | [Breakout](games/breakout.py) | 1,430 bytes |
 | [Frogger](games/frogger.py) | 1,742 bytes |
-| **Total** | **40,467 bytes** |
+| **Total** | **37,382 bytes** |
 <!-- GAME_TABLE_END -->
 ##
 
