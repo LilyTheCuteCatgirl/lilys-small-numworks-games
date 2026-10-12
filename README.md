@@ -6,14 +6,13 @@ Each game is compressed to use as little storage space as possible while remaini
 
 ## Available Games
 
-
-| Games | File Size |
+| Game | File Size |
 |---|---:|
 | Chess | 10,402 bytes |
-| Chrome Dino | 10,760 bytes |
-| Snake | 5,953 bytes |
-| Flappy Bird | 5,279 bytes |
-| 2048 | 3,785 bytes |
+| Chrome Dino | 8,918 bytes |
+| Snake | 5,094 bytes |
+| Flappy Bird | 5,172 bytes |
+| 2048 | 1,754 bytes |
 
 
 # how to upload the games on the calculator:
