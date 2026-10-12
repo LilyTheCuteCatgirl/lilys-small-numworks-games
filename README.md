@@ -34,5 +34,3 @@ when on the website after making an account go in "My Scripts" and press new scr
 to lanch a game go in python -> game.py click the three dots and click "execute program"
 
 ## enjoy!!!
-
-
