@@ -14,7 +14,7 @@ def c(x,y):
  return(x,y)
 def m(u):
  for k in range(4):
-  if keydown(k)==True and u+k!=3:return k
+  if keydown(k)and u+k!=3:return k
  return u
 def f():fill_rect(0,0,320,222,W)
 def h():draw_string('(DELETE to exit)',0,0);a(31183,70,80,10,S);fill_rect(95,80,2,4,K);fill_rect(95,86,2,4,K);fill_rect(100,84,4,2,R);fill_rect(104,82,2,2,R);fill_rect(104,86,2,2,R);U()
@@ -42,7 +42,7 @@ def g():
   if keydown(0)or keydown(1)or keydown(2)or keydown(3):u=m(u)
   if keydown(KEY_BACKSPACE):
    while keydown(KEY_BACKSPACE):sleep(0.1)
-   while keydown(KEY_BACKSPACE)!=True:sleep(0.1)
+   while not keydown(KEY_BACKSPACE):sleep(0.1)
    while keydown(KEY_BACKSPACE):sleep(0.1)
   A.append(u)
   if x==q and y==r:z=z+1;q,r=j(w,D);o=o+1
@@ -62,7 +62,7 @@ def g():
    p=t
  draw_string('Score:'+str(o),10,10);draw_string('(OK=play again, DELETE=Menu)',10,30)
  C=0
- while C==0:
+ while not C:
   if keydown(KEY_OK):C=1;g()
   elif keydown(KEY_BACKSPACE):C=2;l()
  print('Score:',o)

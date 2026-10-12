@@ -1,5 +1,5 @@
 from kandinsky import fill_rect as R,draw_string as T
-from ion import keydown as K,KEY_LEFT as L,KEY_RIGHT as H,KEY_OK as O,KEY_EXE as E
+from ion import*;K=keydown;L=KEY_LEFT;H=KEY_RIGHT;O=KEY_OK;E=KEY_EXE
 from time import sleep as S
 from random import randint as Q
 B=(0,0,0)
@@ -92,4 +92,4 @@ def J():
  T('OK TO RESTART',90,140,W,B)
  while not K(O):S(.05)
  while K(O):S(.05)
-while True:J()
+while 1:J()

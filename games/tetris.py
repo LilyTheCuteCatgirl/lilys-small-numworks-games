@@ -1,5 +1,5 @@
 from kandinsky import fill_rect as F,draw_string as S
-from ion import keydown as K,KEY_UP,KEY_DOWN,KEY_LEFT,KEY_RIGHT,KEY_OK,KEY_EXE
+from ion import*;K=keydown
 from time import sleep as Z,monotonic as M
 from random import randint as I
 H='4567125614561245015604562456'
@@ -13,8 +13,8 @@ def B(n,r,x,y):
   yield x+a,y+b
 def T(n,r,x,y):
  for a,b in B(n,r,x,y):
-  if a<0 or a>=10 or b>=20 or b>=0 and g[b][a]:return False
- return True
+  if a<0 or a>=10 or b>=20 or b>=0 and g[b][a]:return 0
+ return 1
 def P(x,y,c):
  if y>=0:F(82+10*x,20+10*y,9,9,C[c])
 def D():
@@ -39,7 +39,7 @@ def N():
 def L():
  global g,s,l,e
  for x,y in B(p,r,u,v):
-  if y<0:return False
+  if y<0:return 0
   g[y][x]=p+1
  q=[row for row in g if 0 in row]
  c=20-len(q)
@@ -59,34 +59,34 @@ def V():
  S('FALL',0,80)
  S('DROP',0,110)
  S('TETRIS',0,185)
- t=M();j=t;h=False;d=False
+ t=M();j=t;h=0;d=0
  D()
- while True:
-  o=M();c=False
+ while 1:
+  o=M();c=0
   U=K(KEY_UP)
   if U and not h:
    a=(r+1)%4
    for w in(0,-1,1,-2,2):
-    if T(p,a,u+w,v):r=a;u+=w;c=True;break
+    if T(p,a,u+w,v):r=a;u+=w;c=1;break
   h=U
   f=K(KEY_LEFT);i=K(KEY_RIGHT)
   if f or i:
    if o>=j:
     m=u+i-f
-    if T(p,r,m,v):u=m;c=True
+    if T(p,r,m,v):u=m;c=1
     j=o+.12
   else:j=o
   k=K(KEY_OK)or K(KEY_EXE)
   if k and not d:
    while T(p,r,u,v+1):v+=1;s+=1
    if not L():break
-   c=True;t=o
+   c=1;t=o
   d=k
   z=max(.10,.68-.045*(e-1))
   if o-t>=(.065 if K(KEY_DOWN)else z):
    if T(p,r,u,v+1):v+=1
    elif not L():break
-   c=True;t=o
+   c=1;t=o
   if c:D()
   Z(.025)
  F(72,90,156,50,W)
@@ -95,4 +95,4 @@ def V():
  while K(KEY_OK)or K(KEY_EXE):Z(.05)
  while not(K(KEY_OK)or K(KEY_EXE)):Z(.05)
  while K(KEY_OK)or K(KEY_EXE):Z(.05)
-while True:V()
+while 1:V()

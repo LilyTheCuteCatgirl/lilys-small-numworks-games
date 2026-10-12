@@ -1,5 +1,5 @@
 from kandinsky import fill_rect as F,draw_string as S
-from ion import keydown as Q,KEY_UP,KEY_DOWN,KEY_LEFT,KEY_RIGHT,KEY_OK
+from ion import*;Q=keydown
 from time import sleep as E,monotonic as M
 from random import randint as I
 R='################# #o.....#.......o# #.###..#..###.#.# #......#........# #.###.....###.#.# #...#..#..#.....# ###.#.....#.###.# #......#........# #.###.....###.#.# #...#..#..#...#.# #.#....#....#...# #o.............o# #################'.split()
@@ -54,8 +54,8 @@ def X():
     Z()
     J()
     H()
-    return True
- return False
+    return 1
+ return 0
 def P():
  global m,a,b,O,t,s,l,p,n
  m=[list(row)for row in R]
@@ -111,4 +111,4 @@ def P():
   if p:p-=1
   H()
  V('YOU WIN!'if n==0 else'GAME OVER')
-while True:P()
+while 1:P()

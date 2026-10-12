@@ -24,7 +24,7 @@ def G():
     F(5+i%12*26,27+i//12*12,24,9,C[i//12])
   D('S:'+str(s)+' L:'+str(l)+' Lv:'+str(v),0,0,W,Q)
  H()
- while True:
+ while 1:
   if e:
    D('YOU WIN!'if e==2 else'GAME OVER',105,115,W,Q)
    D('OK TO RESTART',85,137,W,Q)
@@ -80,5 +80,5 @@ def G():
   F(p,190,58,7,W)
   F(x-3,y-3,6,6,W)
   Z(.045)
-while True:
+while 1:
  G()

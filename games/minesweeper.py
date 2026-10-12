@@ -1,5 +1,5 @@
 from kandinsky import fill_rect as F,draw_string as S
-from ion import keydown as K,KEY_UP,KEY_DOWN,KEY_LEFT,KEY_RIGHT,KEY_OK,KEY_EXE,KEY_SHIFT
+from ion import*;K=keydown
 from time import sleep as Z
 from random import randint as I
 W=12;H=9;M=18
@@ -33,7 +33,7 @@ def A(s=''):
 def J():
  global m,o,f,j,a
  m=[0]*(W*H);o=[0]*(W*H);f=[0]*(W*H)
- j=0;a=True
+ j=0;a=1
  F(0,0,320,222,T)
  for p in range(W*H):D(p)
  A()
@@ -57,7 +57,7 @@ def L():
  global j,a
  J()
  z=(KEY_UP,KEY_DOWN,KEY_LEFT,KEY_RIGHT,KEY_OK,KEY_EXE,KEY_SHIFT)
- while True:
+ while 1:
   k=-1
   for i,v in enumerate(z):
    if K(v):k=i;break
@@ -72,7 +72,7 @@ def L():
    f[j]=1-f[j]
    A()
   if k in(4,5)and not f[j]and not o[j]:
-   if a:P(j);a=False
+   if a:P(j);a=0
    if m[j]:
     for p in range(W*H):
      if m[p]:o[p]=1;D(p)
@@ -86,4 +86,4 @@ def L():
  while K(KEY_OK)or K(KEY_EXE):Z(.05)
  while not(K(KEY_OK)or K(KEY_EXE)):Z(.05)
  while K(KEY_OK)or K(KEY_EXE):Z(.05)
-while True:L()
+while 1:L()

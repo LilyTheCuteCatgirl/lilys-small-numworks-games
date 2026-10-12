@@ -1,5 +1,5 @@
 from kandinsky import fill_rect as R,draw_string as T
-from ion import keydown as K,KEY_UP as U,KEY_DOWN as N,KEY_OK as O
+from ion import*;K=keydown;U=KEY_UP;N=KEY_DOWN;O=KEY_OK
 from time import sleep as S
 B=(0,0,0)
 W=(255,255,255)
@@ -55,4 +55,4 @@ def M():
  T('OK TO RESTART',90,120,W,B)
  while not K(O):S(.05)
  while K(O):S(.05)
-while True:M()
+while 1:M()

@@ -21,7 +21,7 @@ def J():
  q=0
  h=[0,0,0,0]
  e=0
- while True:
+ while 1:
   if e:
    F(0,0,320,222,B)
    D('YOU WIN!'if e==2 else'GAME OVER',105,85,W,B)
@@ -95,5 +95,5 @@ def J():
   F(x-4,20+y*18+4,3,3,B)
   F(x+2,20+y*18+4,3,3,B)
   Z(.06)
-while True:
+while 1:
  J()
