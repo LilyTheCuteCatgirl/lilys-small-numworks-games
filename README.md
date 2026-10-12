@@ -17,18 +17,22 @@ Each game is compressed to use as little storage space as possible while remaini
 
 
 # how to upload the games on the calculator:
+#### to use these games you need to go on  "https://my.numworks.com/python/calculator"
 
-to use these games you need to go on 
-"https://my.numworks.com/python/calculator"
 
+when on the website after making an account go in "My Scripts" and press new script
 ![alt text](image.png)
 
-when on the website after making an account go in scripts and press new script
+
+## copy the code from the game that you want into the websites code editor
 
 ![alt text](<Screenshot 2026-10-12 180434.png>)
 
 ![](<Screenshot 2026-10-12 180803.png>)
 
-## after doing this you can unplug your calculator and start playing
+## after doing this you can unplug your calculator
+to lanch a game go in python -> game.py click the three dots and click "execute program"
+
+## enjoy!!!
 
 
