@@ -14,3 +14,21 @@ Each game is compressed to use as little storage space as possible while remaini
 | Snake | 5,953 bytes |
 | Flappy Bird | 5,279 bytes |
 | 2048 | 3,785 bytes |
+
+
+# how to upload the games on the calculator:
+
+to use these games you need to go on 
+"https://my.numworks.com/python/calculator"
+
+![alt text](image.png)
+
+when on the website after making an account go in scripts and press new script
+
+![alt text](<Screenshot 2026-10-12 180434.png>)
+
+![](<Screenshot 2026-10-12 180803.png>)
+
+## after doing this you can unplug your calculator and start playing
+
+
