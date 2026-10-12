@@ -47,4 +47,4 @@ The goal is to make each game as small as possible while keeping it fully playab
 
 
 
-### NOTE: most of these games werre NOT fully developped by me i took them from many diferant sources and optimised them to fit on the numworks calculators / optimised them to not take up a lotof space on the calculator
+### NOTE: most of these games werre NOT fully developped by me i took them from many diferant sources and optimised them to fit on the numworks calculators / optimised them to not take up a lot of space on the calculator
