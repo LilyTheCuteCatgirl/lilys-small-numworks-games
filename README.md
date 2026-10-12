@@ -13,6 +13,9 @@ Each game is compressed to use as little storage space as possible while remaini
 | Snake | 5,094 bytes |
 | Flappy Bird | 5,172 bytes |
 | 2048 | 1,754 bytes |
+| Pac-Man | 2,496 bytes |
+| Tetris | 2,232 bytes |
+| Minesweeper | 1,945 bytes |
 
 
 # how to upload the games on the calculator:
