@@ -1,12 +1,10 @@
-# Lily's Small NumWorks Games
+Lily's Small NumWorks Games
 
-A collection of small, optimized Python games made to run on the NumWorks graphing calculator.
+A collection of small, optimized Python games for NumWorks graphing calculators.
 
-Each game is compressed to use as little storage space as possible while remaining fully playable.
+The goal is to make each game as small as possible while keeping it fully playable. You can choose which games to install depending on the storage space available on your calculator.
 
 ## Available Games
-
-
 <!-- GAME_TABLE_START -->
 | Games | File Size |
 |---|---:|
@@ -24,29 +22,29 @@ Each game is compressed to use as little storage space as possible while remaini
 | [Frogger](games/frogger.py) | 1,742 bytes |
 | **Total** | **40,467 bytes** |
 <!-- GAME_TABLE_END -->
+##
 
-# how to upload the games on the calculator:
-#### to use these games you need to go on  "https://my.numworks.com/python/calculator"
+# How to Install a Game
 
+1. Open the NumWorks Python website and sign in to your NumWorks account, or create one if you don't have one yet.
+(https://my.numworks.com/)
+2. Go to "My Scripts" and select New Script.
 
-when on the website after making an account go in "My Scripts" and press new script
 ![image](<readme_images/mainpage.png>)
 
 
-## copy the code from the game that you want into the websites code editor
+3. Click the name of the game you want in the table above, copy its full Python code, and paste it into the NumWorks website's script editor. Give the script a name and save it.
 
 ![image](<readme_images/myscripts.png>)
 
+4. Connect your NumWorks calculator to your computer using a USB cable. On the website, use "load to calculator" to transfer your saved script.
+
 ![image](<readme_images/loadgame.png>)
 
-## after doing this you can unplug your calculator
-to lanch a game go in python -> game.py click the three dots and click "execute program"
+5. Once the transfer finishes, disconnect your calculator. Open the Python application, find the script you transferred, select its options icon, and choose Execute program.
 
-## enjoy!!!
-
+### Enjoy the game!
 
 
 
-
-
-### NOTE: most of these games werre NOT fully developped by me i took them from many diferant sources and optimised them to fit on the numworks calculators 
+### NOTE: most of these games werre NOT fully developped by me i took them from many diferant sources and optimised them to fit on the numworks calculators / optimised them to not take up a lotof space on the calculator
