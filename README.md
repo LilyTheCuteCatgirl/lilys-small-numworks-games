@@ -1,6 +1,6 @@
-Lily's Small NumWorks Games
+# Lily's Small NumWorks Games
 
-A collection of small, optimized Python games for NumWorks graphing calculators.
+### A collection of small, optimized Python games for NumWorks graphing calculators.
 
 The goal is to make each game as small as possible while keeping it fully playable. You can choose which games to install depending on the storage space available on your calculator.
 
