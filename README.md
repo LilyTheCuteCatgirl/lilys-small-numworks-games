@@ -8,19 +8,19 @@ The goal is to make each game as small as possible while keeping it fully playab
 <!-- GAME_TABLE_START -->
 | Games | File Size |
 |---|---:|
-| [Chess](games/chess.py) | 10,402 bytes |
+| [Chess](games/chess.py) | 9,403 bytes |
 | [Chrome Dino](games/chrome_dino.py) | 6,382 bytes |
-| [Snake](games/snake.py) | 2,603 bytes |
-| [Flappy Bird](games/flappy_bird.py) | 3,709 bytes |
-| [2048](games/2048.py) | 1,740 bytes |
-| [Pac-Man](games/pacman.py) | 2,496 bytes |
-| [Tetris](games/tetris.py) | 2,232 bytes |
-| [Minesweeper](games/minesweeper.py) | 1,945 bytes |
-| [Pong](games/pong.py) | 1,067 bytes |
-| [Space Invaders](games/space_invaders.py) | 1,620 bytes |
-| [Breakout](games/breakout.py) | 1,430 bytes |
-| [Frogger](games/frogger.py) | 1,742 bytes |
-| **Total** | **37,368 bytes** |
+| [Snake](games/snake.py) | 2,595 bytes |
+| [Flappy Bird](games/flappy_bird.py) | 3,671 bytes |
+| [2048](games/2048.py) | 1,469 bytes |
+| [Pac-Man](games/pacman.py) | 2,442 bytes |
+| [Tetris](games/tetris.py) | 2,139 bytes |
+| [Minesweeper](games/minesweeper.py) | 1,870 bytes |
+| [Pong](games/pong.py) | 1,053 bytes |
+| [Space Invaders](games/space_invaders.py) | 1,603 bytes |
+| [Breakout](games/breakout.py) | 1,424 bytes |
+| [Frogger](games/frogger.py) | 1,736 bytes |
+| **Total** | **35,787 bytes** |
 <!-- GAME_TABLE_END -->
 ##
 

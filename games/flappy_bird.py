@@ -9,7 +9,7 @@ def _P(K,L,T):
 def n(K,L):_P(K,L,_N)
 def G(K,L):_P(K,L,_Q if J-I>0 else _R);_P(K,L,_S)
 a='pink';h=d
-fr(0,0,350,300,a);n(20,50);n(260,50);draw_string('by LilyTheCatgirl',80,55,d,a);fr(102,86,92,47,d);fr(103,87,90,45,m);draw_string('OK: jouer',108,110,z,m)
+fr(0,0,350,300,a);n(20,50);n(260,50);draw_string('by LilyTheCatgirl',80,55,d,a);draw_string('OK: jouer',108,110,z,a)
 while not kd(ko):sleep(0.05)
 x=50;y=100;I=1;J=0;j=0;k=0;q=250;A=0;r=375;B=0;s=500;C=0;b=0;t=0;c=10;o=0;E=1;H=1;v=0;fr(0,0,350,350,a)
 while H==1:

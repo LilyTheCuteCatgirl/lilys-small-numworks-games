@@ -1,7 +1,9 @@
-from kandinsky import*;from ion import keydown;from time import sleep;from random import randint;from math import*
+from kandinsky import*;from ion import keydown;from time import sleep
 def Y(s):return[[ord(c)-65 for c in ae]for ae in s.split('_')]
 aa=Y('JE_IG_HI_HI_HI_HI_IG_JE_A_A_JE_IG_IG_HI_GK_EO_CS');ab=Y('CDCDCDCD_CDCDCDCD_CS_CS_DQ_DQ_EO_EO_FM_FM_FM_FM_FM_FFCF_EFBCBF_DFBEBF_CGBCBBBG_CGBEBG');P=Y('KC_JE_IE_IDCB_HEBD_HI_IG_IG_JE_KC_A_IG_JE_IG_IG_HI_FFCF_DGEG_CFIF');Q=Y('KC_IF_HI_GK_GL_FDBJ_EP_DQ_CS_CHCJ_CFDK_DDDL_IM_HN_GN_EP_DR_DR');Z=Y('KC_JE_EDDCDD_DGBCBG_CS_CS_CECGCE_CDEEED_DCEEEC_DDECED_DEDCDE_EECCCE_FM_GK_GK_FM_EO_CS');U=Y('JE_DDCGCD_CFBGBF_CFBGBF_CFCECF_DDECED_EBEEEB_ECDEDC_EO_FM_FM_GK_GK_GK_FM_DQ_CS_CS');g=[None,aa,Q,P,ab,U,Z]
-def b():ae=[[4,1],[2,1],[3,1],[5,1],[6,1],[3,1],[2,1],[4,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[1,2],[1,2],[1,2],[1,2],[1,2],[1,2],[1,2],[1,2],[4,2],[2,2],[3,2],[6,2],[5,2],[3,2],[2,2],[4,2]];return ae
+def b():
+ a=(4,2,3,5,6,3,2,4)
+ return [[p,1]for p in a+(1,)*8]+[[0,0]for _ in range(32)]+[[p,2]for p in(1,)*8+(4,2,3,6,5,3,2,4)]
 ad=[-50,-40,-30,-20,-10,-5,0,5,10,15,20,25,30,40,50]
 def W(s):return[ad[ord(c)-65]for c in s]
 J=W('GGGGGGGGOOOOOOOOIIKMMKIIHHILLIHHGGGKKGGGHFEGGEFHHIIDDIIHGGGGGGGG');A=W('ABCCCCBABDGGGGDBCGIJJIGCCHJKKJHCCGJKKJGCCHIJJIHCBDGHHGDBABCCCCBA');z=W('DEEEEEEDEGGGGGGEEGHIIHGEEHHIIHHEEGIIIIGEEIIIIIIEEHGGGGHEDEEEEEED');K=W('GGGGGGGGHIIIIIIHFGGGGGGFFGGGGGGFFGGGGGGFFGGGGGGFFGGGGGGFGGGHHGGG');G=W('DEEFFEEDEGGGGGGEEGHHHHGEFGHHHHGFGGHHHHGFEHHHHHGEEGHGGGGEDEEFFEED');w=W('CBBAABBCCBBAABBCCBBAABBCCBBAABBCDCCBBCCDEDDDDDDEKKGGGGKKKMIGGIMK');v=W('ABCDDCBACDEGGEDCCEKMMKECCEMNNMECCEMNNMECCEKMMKECCCGGGGCCACCCCCCA')
@@ -33,10 +35,10 @@ def T(x,y,af,ae):
    if 0<=aj<8 and 0<=ak<8:
     if ae[ak*8+aj][1]==3-af:ag.append([(x,y),(aj,ak)])
  return ag
-def D(x,y,af,ae):
+def a0(x,y,af,ae,dirs):
  ag=[]
- for (ak,al) in [(1,0),(-1,0),(0,1),(0,-1)]:
-  ah,aj=(x,y)
+ for ak,al in dirs:
+  ah,aj=x,y
   while True:
    ah+=ak;aj+=al
    if 0<=ah<8 and 0<=aj<8:
@@ -45,6 +47,7 @@ def D(x,y,af,ae):
     else:break
    else:break
  return ag
+def D(x,y,af,ae):return a0(x,y,af,ae,((1,0),(-1,0),(0,1),(0,-1)))
 def O(x,y,af,ae):
  ag=[];ak=[(2,1),(2,-1),(-2,1),(-2,-1),(1,2),(1,-2),(-1,2),(-1,-2)]
  for (al,am) in ak:
@@ -52,18 +55,7 @@ def O(x,y,af,ae):
   if 0<=ah<8 and 0<=aj<8:
    if ae[aj*8+ah][0]==0 or ae[aj*8+ah][1]!=af:ag.append([(x,y),(ah,aj)])
  return ag
-def t(x,y,af,ae):
- ag=[]
- for (ak,al) in [(1,1),(-1,1),(1,-1),(-1,-1)]:
-  ah,aj=(x,y)
-  while True:
-   ah+=ak;aj+=al
-   if 0<=ah<8 and 0<=aj<8:
-    if ae[aj*8+ah][0]==0:ag.append([(x,y),(ah,aj)])
-    elif ae[aj*8+ah][1]!=af:ag.append([(x,y),(ah,aj)]);break
-    else:break
-   else:break
- return ag
+def t(x,y,af,ae):return a0(x,y,af,ae,((1,1),(-1,1),(1,-1),(-1,-1)))
 def R(x,y,af,ae):return D(x,y,af,ae)+t(x,y,af,ae)
 def S(x,y,af,ae):
  ag=[];am=[(1,0),(-1,0),(0,1),(0,-1),(1,1),(1,-1),(-1,1),(-1,-1)]
@@ -150,21 +142,15 @@ def F(ae,af,c):
  return ae
 def B(ae,ao,am,an,ap):
  if ao==0:return(j(ae),None)
- ah=None
- if ap:
-  ar=l(ae,2);ak=-9999
-  for af in ar:
-   ag,ae=E(ae,af);aj=B(ae,ao-1,am,an,False)[0];ae=F(ae,af,ag)
-   if aj>ak:ak=aj;ah=af;am=max(am,aj)
-   if an<=am:break
-  return(ak,ah)
- else:
-  aq=l(ae,1);al=9999
-  for af in aq:
-   ag,ae=E(ae,af);aj=B(ae,ao-1,am,an,True)[0];ae=F(ae,af,ag)
-   if aj<al:al=aj;ah=af;an=min(an,aj)
-   if an<=am:break
-  return(al,ah)
+ ah=None;v=-9999 if ap else 9999
+ for af in l(ae,2 if ap else 1):
+  ag,ae=E(ae,af);aj=B(ae,ao-1,am,an,not ap)[0];ae=F(ae,af,ag)
+  if (aj>v if ap else aj<v):
+   v=aj;ah=af
+   if ap:am=max(am,aj)
+   else:an=min(an,aj)
+  if an<=am:break
+ return(v,ah)
 def f(ag,af):ae=B(ag,af,-9999,9999,False)[1];return ae
 def N(ae):
  if [6,1]in ae and[6,2]in ae:return False
@@ -186,25 +172,20 @@ def m(ae,ak,al,af,an,am,aj,ah):
  return(aj,af,ao)
 def X(am):
  ae=b();af=None;ai=0;aj=0;al,ak=(0,0);d=(0,0);an=[];c=False;ah=2;C(ae);ag=(0,200,0);M(ah)
- while am=='2_player':
+ while am in ('1_player','2_player'):
   if c==False:al,ak=q(ai,aj,al,ak,ae,af,ah);r(j(ae));c=True;k(ai,aj,d,ag)
   ai,aj,d,c=u(ai,aj,d,c);ah,af,ag=m(ae,ai,aj,af,al,ak,ah,d);sleep(0.1)
- while am=='1_player':
-  if c==False:al,ak=q(ai,aj,al,ak,ae,af,ah);r(j(ae));c=True;k(ai,aj,d,ag)
-  ai,aj,d,c=u(ai,aj,d,c);ah,af,ag=m(ae,ai,aj,af,al,ak,ah,d);sleep(0.1)
-  if ah==1:
+  if am=='1_player'and ah==1:
    ao=f(ae,2);n(ae,ao[0][0],ao[0][1],ao[1][0],ao[1][1],g);ah=ah%2+1
-   if N(ae)==True:
+   if N(ae):
     sleep(2)
     for i in range(160):fill_rect(i,0,1,240,(255,184,60));fill_rect(319-i,0,1,240,(255,184,60));sleep(0.01)
     sleep(1);am=V(g)
 def V(ae):
- af=False;i=0;ac();draw_string('game by LilyTheCatgirl',65,10);draw_string('press OK to play',75,200)
- while af==False:
-  fill_rect(90,50,130,130,(210,179,139));o(ae[i],(randint(0,255),randint(0,255),randint(0,255)),90,60,6);i=(i+1)%7;sleep(0.8)
-  if keydown(4):af=True
- for i in range(160):fill_rect(i,0,1,240,(255,184,60));fill_rect(319-i,0,1,240,(255,184,60));sleep(0.01)
- sleep(1);ac();fill_rect(90,50,130,130,(210,179,139));fill_rect(105,74,100,30,(0,200,0));fill_rect(105,129,100,30,(255,255,255));draw_string('1 PLAYER',115,80);draw_string('2 PLAYER',115,135);af=False;s='1_player'
+ ac();draw_string('game by LilyTheCatgirl',65,10);draw_string('press OK to play',75,200)
+ while not keydown(4):sleep(0.05)
+ while keydown(4):sleep(0.05)
+ ac();fill_rect(90,50,130,130,(210,179,139));fill_rect(105,74,100,30,(0,200,0));fill_rect(105,129,100,30,(255,255,255));draw_string('1 PLAYER',115,80);draw_string('2 PLAYER',115,135);af=False;s='1_player'
  while af==False:
   if keydown(1):fill_rect(105,74,100,30,(0,200,0));fill_rect(105,129,100,30,(255,255,255));draw_string('1 PLAYER',115,80);draw_string('2 PLAYER',115,135);s='1_player'
   elif keydown(2):fill_rect(105,74,100,30,(255,255,255));fill_rect(105,129,100,30,(0,200,0));draw_string('1 PLAYER',115,80);draw_string('2 PLAYER',115,135);s='2_player'
