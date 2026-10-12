@@ -5,11 +5,7 @@ def b():
  except:return'orange'
  else:return'red'
 def n(i,x,y):
- if i[-1]==3:o=[x-10,y]
- elif i[-1]==2:o=[x,y-10]
- elif i[-1]==0:o=[x+10,y]
- elif i[-1]==1:o=[x,y+10]
- o[0],o[1]=c(o[0],o[1]);return o
+ d=i[-1];x,y=c(x+10*((d==0)-(d==3)),y+10*((d==1)-(d==2)));return[x,y]
 def j(q,r):
  o=randint(0,31)*10+4;p=randint(0,21)*10+5
  while get_pixel(o,p)!=r:o=randint(0,31)*10+4;p=randint(0,21)*10+5
@@ -36,13 +32,7 @@ def U():
 def X(i,r,s,o):
  for j,(t,x,y)in enumerate((('Speed:'+str(r),50,140),('Power:+'+str(s),200,140),('Score:+'+str(o),50,170),('Play',220,170))):draw_string(t,x,y,b()if i==j+1 else'black','white')
 def l():
- f();U();t=[1,1,1,1,1,1,1,1,1,4,4,3,3,4,4,1,1];B=0;C=120;w=-110;A=120;u=1;D=0
- for i in range(len(t)):
-  B=B+((t[i]==1)-(t[i]==3))*10;C=C+((t[i]==2)-(t[i]==4))*10
-  if w<0:w=w+10
-  else:w=w+((t[i-11]==1)-(t[i-11]==3))*10;A=A+((t[i-11]==2)-(t[i-11]==4))*10;fill_rect(w,A,10,10,W)
-  fill_rect(B,C,10,10,S);sleep(0.05)
- fill_rect(B+5,C,2,4,K);fill_rect(B+5,C+6,2,4,K);fill_rect(B+10,C+4,4,2,R);fill_rect(B+14,C+2,2,2,R);fill_rect(B+14,C+6,2,2,R);draw_string('(DELETE to exit)',0,0);draw_string('> Play <',125,140,b());draw_string('  Options  ',110,165);q=0;r=0.05;s=5;o=1;z=0;p=1
+ f();h();draw_string('> Play <',125,140,b());draw_string('  Options  ',110,165);q=0;r=0.05;s=5;o=1;z=0;p=1
  while keydown(KEY_OK)!=True and z==0:
   if keydown(KEY_DOWN)and p==1:draw_string('  Play  ',125,140);draw_string('> Options <',110,165,b());p=2
   elif keydown(KEY_UP)and p==2:draw_string('> Play <',125,140,b());draw_string('  Options  ',110,165);p=1

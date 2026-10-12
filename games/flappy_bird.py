@@ -1,4 +1,4 @@
-from math import*;from time import*;from ion import keydown as kd,KEY_OK as ko,KEY_UP as ku;from kandinsky import fill_rect as fr;from kandinsky import*;from random import*;from ion import*;d='black';m='white';z='red';w='yellow';D=color(173,216,230);p=color(144,238,144);u=color(0,100,0)
+from math import*;from time import*;from ion import keydown as kd,KEY_OK as ko,KEY_UP as ku;from kandinsky import fill_rect as fr;from kandinsky import*;from random import*;from ion import*;d='black';m='white';z='red';w='yellow';p=color(144,238,144);u=color(0,100,0)
 _N=((0,150,38,2,0),(0,150,2,8,0),(2,158,2,6,0),(4,164,2,150,0),(36,150,2,8,0),(34,158,2,4,0),(32,162,2,150,0),(6,164,26,2,0),(2,152,2,6,1),(4,158,2,6,1),(6,166,2,150,1),(34,152,2,6,1),(32,158,2,4,1),(30,162,2,1,1),(30,166,2,150,1),(4,152,30,6,2),(6,158,26,6,2),(8,166,22,150,2),(38,150,2,150,3),(36,158,2,150,3),(34,162,2,150,3),(0,68,38,2,0),(0,62,2,8,0),(2,56,2,6,0),(4,-80,2,136,0),(36,62,2,6,0),(34,56,2,6,0),(32,-80,2,136,0),(4,54,30,2,0),(2,62,2,6,1),(4,56,2,6,1),(6,-80,2,134,1),(34,62,2,6,1),(32,56,2,6,1),(30,-80,2,134,1),(2,62,2,6,1),(4,56,2,6,1),(6,56,26,6,2),(4,62,30,6,2),(8,-80,22,134,2),(38,-80,2,150,3),(36,-80,2,142,3),(34,-80,2,136,3))
 _Q=((0,-10,32,10,3),(0,0,8,4,3),(0,4,6,2,3),(0,6,2,2,3),(8,0,4,2,3),(30,0,2,14,3),(26,0,4,4,3),(24,0,2,2,3),(28,4,2,2,3))
 _R=((0,24,32,4,3),(0,14,2,4,3),(2,16,2,4,3),(4,20,2,4,3),(6,22,4,2,3),(20,22,12,2,3),(30,16,2,4,3),(28,20,2,2,3))
@@ -8,16 +8,9 @@ def _P(K,L,T):
  for X,Y,W,H,V in T:fr(K+X,L+Y,W,H,C[V])
 def n(K,L):_P(K,L,_N)
 def G(K,L):_P(K,L,_Q if J-I>0 else _R);_P(K,L,_S)
-g=[color(0,100,100),D,'grey','pink','brown',d,color(0,0,100),color(0,100,200),'green'];F=1;l=2;f=1;a=D;fr(0,0,350,300,D);a=(173,216,230);j=20;k=50;n(j,k);j=260;k=50;n(j,k);draw_string('by LilyTheCatgirl',80,55,d,D);draw_string('[shift]',110,150,d,D);fr(102,86,92,47,d);fr(103,87,90,45,m);draw_string('<-   ->',110,90,d,m);fr(135,91,15,15,g[f]);draw_string('jouer',118,110,z,m)
-while F==1:
- a=g[f]
- if kd(KEY_LEFT)and f>0 and(l==1):f=f-1;fr(135,91,15,15,g[f]);a=g[f];sleep(0.3);print(a)
- if kd(KEY_RIGHT)and f<len(g)-1 and(l==1):f=f+1;fr(135,91,15,15,g[f]);sleep(0.3);a=g[f];print(a)
- if kd(ku)and l==2:l=1;draw_string('<-   ->',110,90,z,m);fr(135,91,15,15,g[f]);draw_string('jouer',118,110,d,m)
- if kd(KEY_DOWN)and l==1:l=2;draw_string('<-   ->',110,90,d,m);fr(135,91,15,15,g[f]);draw_string('jouer',118,110,z,m)
- if kd(ko)and l==2:F=0
-if a==d or a==color(0,0,100)or a==color(0,100,200):h=m
-else:h=d
+a='pink';h=d
+fr(0,0,350,300,a);n(20,50);n(260,50);draw_string('by LilyTheCatgirl',80,55,d,a);fr(102,86,92,47,d);fr(103,87,90,45,m);draw_string('OK: jouer',108,110,z,m)
+while not kd(ko):sleep(0.05)
 x=50;y=100;I=1;J=0;j=0;k=0;q=250;A=0;r=375;B=0;s=500;C=0;b=0;t=0;c=10;o=0;E=1;H=1;v=0;fr(0,0,350,350,a)
 while H==1:
  while E==1:
