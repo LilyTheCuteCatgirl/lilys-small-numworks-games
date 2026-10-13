@@ -28,20 +28,57 @@ def p(b,c,s):
  for r in range(5,-1,-1):
   if not b[r*7+c]:b[r*7+c]=s;return r
  return-1
+Z=(3,2,4,1,5,0,6)
+V=[]
+for y in range(6):
+ for x in range(7):
+  for u,v in ((1,0),(0,1),(1,1),(1,-1)):
+   if x+3*u<7 and 0<=y+3*v<6:V.append(tuple((y+i*v)*7+x+i*u for i in range(4)))
+def e(b):
+ z=0
+ for q in V:
+  a=c=0
+  for i in q:
+   if b[i]==2:a+=1
+   elif b[i]==1:c+=1
+  if not a*c:z+=(0,1,8,65,9999)[a]-(0,1,8,75,9999)[c]
+ for i in range(3,42,7):z+=3*((b[i]==2)-(b[i]==1))
+ return z
+def N(b,d,s,a,z):
+ if d==0:return e(b)
+ best=-99999 if s==2 else 99999
+ any0=0
+ for c in Z:
+  if b[c]:continue
+  any0=1
+  r=p(b,c,s)
+  if w(b,c,r,s):v=9999+d if s==2 else-9999-d
+  else:v=N(b,d-1,3-s,a,z)
+  b[r*7+c]=0
+  if s==2:
+   if v>best:best=v
+   if best>a:a=best
+  else:
+   if v<best:best=v
+   if best<z:z=best
+  if a>=z:break
+ return best if any0 else 0
 def a0(b):
- o=[3,2,4,1,5,0,6]
  for s in(2,1):
-  for c in o:
+  for c in Z:
    r=p(b,c,s)
    if r>=0:
-    win=w(b,c,r,s)
-    b[r*7+c]=0
-    if win:
-     return c
- for c in o:
-  if b[c]==0:
-   return c
- return-1
+    win=w(b,c,r,s);b[r*7+c]=0
+    if win:return c
+ best=-99999;col=-1
+ for c in Z:
+  if b[c]:continue
+  r=p(b,c,2)
+  if w(b,c,r,2):b[r*7+c]=0;return c
+  v=N(b,3,1,-99999,99999)
+  b[r*7+c]=0
+  if v>best:best=v;col=c
+ return col
 def d(b,c,s,m):
  F(0,0,320,222,B)
  S('YOU'if s==1 and m==1 else'CPU'if m==1 else'RED'if s==1 else'YELLOW',3,3,W,B)
