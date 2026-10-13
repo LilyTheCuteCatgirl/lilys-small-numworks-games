@@ -8,7 +8,7 @@ The goal is to make each game as small as possible while keeping it fully playab
 <!-- GAME_TABLE_START -->
 | Games | File Size |
 |---|---:|
-| [Chess](games/chess.py) | 9,403 bytes |
+| [Chess](games/chess.py) | 7,957 bytes |
 | [Chrome Dino](games/chrome_dino.py) | 6,382 bytes |
 | [Snake](games/snake.py) | 2,595 bytes |
 | [Flappy Bird](games/flappy_bird.py) | 3,671 bytes |
@@ -20,10 +20,10 @@ The goal is to make each game as small as possible while keeping it fully playab
 | [Space Invaders](games/space_invaders.py) | 1,603 bytes |
 | [Breakout](games/breakout.py) | 1,424 bytes |
 | [Frogger](games/frogger.py) | 1,736 bytes |
-| [Connect Four](games/connect_four.py) | 2,160 bytes |
-| [Sokoban](games/sokoban.py) | 1,922 bytes |
-| [Tron](games/tron.py) | 1,346 bytes |
-| **Total** | **41,215 bytes** |
+| [Connect Four](games/connect_four.py) | 2,043 bytes |
+| [Sokoban](games/sokoban.py) | 1,497 bytes |
+| [Tron](games/tron.py) | 1,253 bytes |
+| **Total** | **39,134 bytes** |
 <!-- GAME_TABLE_END -->
 ##
 
