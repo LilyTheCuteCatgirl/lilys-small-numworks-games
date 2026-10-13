@@ -21,9 +21,9 @@ The goal is to make each game as small as possible while keeping it fully playab
 | [Breakout](games/breakout.py) | 1,424 bytes |
 | [Frogger](games/frogger.py) | 1,736 bytes |
 | [Connect Four](games/connect_four.py) | 2,890 bytes |
-| [Sokoban](games/sokoban.py) | 1,497 bytes |
+| [Sokoban](games/sokoban.py) | 1,660 bytes |
 | [Tron](games/tron.py) | 1,253 bytes |
-| **Total** | **39,981 bytes** |
+| **Total** | **40,144 bytes** |
 <!-- GAME_TABLE_END -->
 ##
 
