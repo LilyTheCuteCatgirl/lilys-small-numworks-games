@@ -1,7 +1,7 @@
 from kandinsky import fill_rect as F0,draw_string as S
 from ion import*;k=keydown
 from time import sleep as t
-L=('########/#......#/#......#/#..$...#/#..o@..#/#......#/#......#/########','########/#......#/#..o.o.#/#..$.$.#/#...@..#/#......#/#......#/########','########/#......#/#..o.o.#/#..$.$.#/#..#@..#/#......#/#......#/########','########/#......#/#.o..o.#/#.$##$.#/#..@...#/#......#/#......#/########','########/#......#/#.oo...#/#.$$##.#/#...@..#/#......#/#......#/########',)
+L=('/F/>/G', '/68/>@/G', 'F/68/>@/G', '>?/58/=@/F', '?@/56/=>/G')
 W=(245,245,245)
 B=(15,19,30)
 F=(49,55,70)
@@ -12,18 +12,9 @@ P=(55,235,207)
 K=(KEY_UP,KEY_DOWN,KEY_LEFT,KEY_RIGHT)
 D=(-8,8,-1,1)
 def u(v):
- a,b,c=[],[],[]
- p=0
- for i,ch in enumerate(L[v].replace('/','')):
-  if ch=='#':
-   a.append(i)
-  if ch=='o':
-   b.append(i)
-  if ch=='$':
-   c.append(i)
-  if ch=='@':
-   p=i
- return a,b,c,p
+ a,b,c,p=L[v].split('/')
+ a=[i for i in range(64)if i//8 in(0,7)or i%8 in(0,7)or chr(i+35)in a]
+ return a,[ord(q)-35 for q in b],[ord(q)-35 for q in c],ord(p)-35
 def d(v,a,b,c,p,s):
  F0(0,0,320,222,B)
  S('SOKOBAN '+str(v+1)+'/'+str(len(L)),70,2,W,B)
@@ -51,16 +42,13 @@ def q(v):
     break
   if key>=0 and not s:
    n=p+D[key]
-   if 0<=n<64 and n not in a:
+   if n not in a:
     if n in c:
      j=n+D[key]
-     if j<0 or j>=64 or j in a or j in c:
-      n=p
-     else:
-      h.append((p,c[:]))
-      c[c.index(n)]=j
-    else:
+     if j in a or j in c:n=p
+    if n!=p:
      h.append((p,c[:]))
+     if n in c:c[c.index(n)]=j
     p=n
     s=all(pos in b for pos in c)
     d(v,a,b,c,p,s)
@@ -72,15 +60,11 @@ def q(v):
   elif k(KEY_SHIFT):
    return v
   elif s and k(KEY_OK):
-   return(v+1)%len(L)
+   return(v+1)%5
   if key<0:
    t(.04)
   else:
    while k(K[key]if key<4 else KEY_BACKSPACE):
     t(.04)
-def z():
- v=0
- while True:
-  v=q(v)
-  t(.1)
-z()
+v=0
+while 1:v=q(v);t(.1)
