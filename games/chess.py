@@ -19,11 +19,11 @@ def o(af,ae,x,y,aj):
 def C(ae):
  aj=(210,179,139);ak=(181,137,98);fill_rect(0,0,320,240,(30,30,30));fill_rect(4,4,216,216,(255,255,255));fill_rect(280,5,35,210,(0,200,0))
  for y in range(8):
-  for x in range(8):ag=aj if(x+y)%2==0 else ak;fill_rect(22+22*x,22+22*y,22,22,ag)
+  for x in range(8):ag=aj if(x+y)%2==0 else ak;fill_rect(22+24*x,8+24*y,24,24,ag)
  al='abcdefgh'
- for i in range(8):draw_string(str(8-i),5,25+22*i);draw_string(al[i],28+22*i,200)
+ for i in range(8):draw_string(str(8-i),5,11+24*i);draw_string(al[i],29+24*i,202)
  for y in range(8):
-  for x in range(8):ah,af=ae[y*8+x];o(g[ah],(255-af%2*255,255-af%2*255,255-af%2*255),22+22*x,24+22*y,1)
+  for x in range(8):ah,af=ae[y*8+x];o(g[ah],(255-af%2*255,255-af%2*255,255-af%2*255),24+24*x,10+24*y,1)
 def T(x,y,af,ae):
  ag=[];ah=1 if af==1 else-1
  if y!=int(3.5+3.5*ah):
@@ -73,22 +73,21 @@ def h(x,y,ae):
  elif ag==5:return R(x,y,af,ae)
  elif ag==6:return S(x,y,af,ae)
  return[]
+def a1(x,y,c,t=1):
+ p=22+24*x;q=8+24*y
+ if t:fill_rect(p,q,24,2,c);fill_rect(p,q+22,24,2,c);fill_rect(p,q,2,24,c);fill_rect(p+22,q,2,24,c)
+ else:fill_rect(p+6,q+6,12,12,c)
 def k(ae,af,d,c):
- if (ae+af)%2==0:ag=(181,137,98)
- else:ag=(210,179,139)
- fill_rect(22+22*(ae-d[0]),22+22*(af-d[1]),22,2,ag);fill_rect(22+22*(ae-d[0]),42+22*(af-d[1]),22,2,ag);fill_rect(22+22*(ae-d[0]),22+22*(af-d[1]),2,22,ag);fill_rect(42+22*(ae-d[0]),22+22*(af-d[1]),2,22,ag);fill_rect(22+22*ae,22+22*af,22,2,c);fill_rect(22+22*ae,42+22*af,22,2,c);fill_rect(22+22*ae,22+22*af,2,22,c);fill_rect(42+22*ae,22+22*af,2,22,c)
+ ag=(181,137,98)if(ae+af)%2==0 else(210,179,139)
+ a1(ae-d[0],af-d[1],ag);a1(ae,af,c)
 def q(x,y,am,al,ae,af,ak):
  for ag in h(am,al,ae):
-  if (ag[1][0]+ag[1][1])%2==0:aj=(210,179,139)
-  else:aj=(181,137,98)
-  if ae[ag[1][0]+ag[1][1]*8][0]!=0:fill_rect(22+ag[1][0]*22,22+ag[1][1]*22,22,2,aj);fill_rect(22+ag[1][0]*22,42+ag[1][1]*22,22,2,aj);fill_rect(22+ag[1][0]*22,22+ag[1][1]*22,2,22,aj);fill_rect(42+ag[1][0]*22,22+ag[1][1]*22,2,22,aj)
-  else:fill_rect(28+ag[1][0]*22,28+ag[1][1]*22,10,10,aj)
+  i,j=ag[1];aj=(210,179,139)if(i+j)%2==0 else(181,137,98)
+  a1(i,j,aj,ae[i+j*8][0]!=0)
  if ae[x+y*8][1]==ak:
-  if af==x+y*8:ah=(0,0,200)
-  else:ah=(0,200,0)
+  ah=(0,0,200)if af==x+y*8 else(0,200,0)
   for ag in h(x,y,ae):
-   if ae[ag[1][0]+ag[1][1]*8][0]!=0:fill_rect(22+ag[1][0]*22,22+ag[1][1]*22,22,2,ah);fill_rect(22+ag[1][0]*22,42+ag[1][1]*22,22,2,ah);fill_rect(22+ag[1][0]*22,22+ag[1][1]*22,2,22,ah);fill_rect(42+ag[1][0]*22,22+ag[1][1]*22,2,22,ah)
-   else:fill_rect(28+ag[1][0]*22,28+ag[1][1]*22,10,10,(100,100,100))
+   i,j=ag[1];a1(i,j,ah if ae[i+j*8][0]else(100,100,100),ae[i+j*8][0]!=0)
  return(x,y)
 def H(x,y):
  if (x+y)%2==0:c=(210,179,139)
@@ -98,7 +97,7 @@ def n(ae,ah,aj,ak,ag,af):
  if ae[ah+8*aj]==[1,1]and ag==7:p=[5,1]
  elif ae[ah+8*aj]==[1,2]and ag==0:p=[5,2]
  else:p=ae[ah+aj*8]
- fill_rect(22+22*ah,22+22*aj,22,22,H(ah,aj));fill_rect(22+22*ak,22+22*ag,22,22,H(ak,ag));c=255-ae[ah+8*aj][1]%2*255;o(af[p[0]],(c,c,c),22+22*ak,24+22*ag,1);ae[ak+8*ag]=p;ae[ah+8*aj]=[0,0];return ae
+ fill_rect(22+24*ah,8+24*aj,24,24,H(ah,aj));fill_rect(22+24*ak,8+24*ag,24,24,H(ak,ag));c=255-ae[ah+8*aj][1]%2*255;o(af[p[0]],(c,c,c),24+24*ak,10+24*ag,1);ae[ak+8*ag]=p;ae[ah+8*aj]=[0,0];return ae
 def j(ae):
  ag=0;aj=0;af=0;ah=0;al=0;an=0;aq=False;ar=False;ao=-1;ap=-1
  for i in range(64):
@@ -119,7 +118,7 @@ def j(ae):
  if ao!=-1:af+=5000;ag+=w[63-ao]if ak=='mg'else v[63-ao]
  if ap!=-1:ah+=5000;aj+=w[ap]if ak=='mg'else v[ap]
  am=ah-af+(aj-ag);return am
-def r(ae):fill_rect(290,10,15,200,(0,0,0));fill_rect(290,int(110-ae/10),15,int(200-(100-ae/10)),(255,255,255));fill_rect(290,109,15,2,(255,0,0));fill_rect(222,4,56,40,(255,255,255));draw_string('eval:',224,7);draw_string(str(ae/100),224,25)
+def r(ae):fill_rect(290,10,15,200,(0,0,0));fill_rect(290,int(110-ae/10),15,int(200-(100-ae/10)),(255,255,255));fill_rect(290,109,15,2,(255,0,0))
 def l(ae,af):
  L=[]
  for i in range(64):
@@ -155,7 +154,6 @@ def f(ag,af):ae=B(ag,af,-9999,9999,False)[1];return ae
 def N(ae):
  if [6,1]in ae and[6,2]in ae:return False
  return True
-def ac():fill_rect(0,0,320,240,(210,179,139));fill_rect(0,50,320,130,(181,137,98));fill_rect(90,0,130,240,(181,137,98))
 def u(x,y,d,c):
  if keydown(0)and x>0:x-=1;d=(-1,0);c=False
  elif keydown(3)and x<7:x+=1;d=(+1,0);c=False
@@ -177,23 +175,20 @@ def X(am):
   ai,aj,d,c=u(ai,aj,d,c);ah,af,ag=m(ae,ai,aj,af,al,ak,ah,d);sleep(0.1)
   if am=='1_player'and ah==1:
    ao=f(ae,2);n(ae,ao[0][0],ao[0][1],ao[1][0],ao[1][1],g);ah=ah%2+1
-   if N(ae):
-    sleep(2)
-    for i in range(160):fill_rect(i,0,1,240,(255,184,60));fill_rect(319-i,0,1,240,(255,184,60));sleep(0.01)
-    sleep(1);am=V(g)
-def V(ae):
- ac();draw_string('game by LilyTheCatgirl',65,10);draw_string('press OK to play',75,200)
- while not keydown(4):sleep(0.05)
+   if N(ae):V();return
+def V():
+ fill_rect(0,0,320,240,(255,255,255));s=1
+ draw_string('1 PLAYER',110,95);draw_string('2 PLAYER',110,125)
  while keydown(4):sleep(0.05)
- ac();fill_rect(90,50,130,130,(210,179,139));fill_rect(105,74,100,30,(0,200,0));fill_rect(105,129,100,30,(255,255,255));draw_string('1 PLAYER',115,80);draw_string('2 PLAYER',115,135);af=False;s='1_player'
- while af==False:
-  if keydown(1):fill_rect(105,74,100,30,(0,200,0));fill_rect(105,129,100,30,(255,255,255));draw_string('1 PLAYER',115,80);draw_string('2 PLAYER',115,135);s='1_player'
-  elif keydown(2):fill_rect(105,74,100,30,(255,255,255));fill_rect(105,129,100,30,(0,200,0));draw_string('1 PLAYER',115,80);draw_string('2 PLAYER',115,135);s='2_player'
-  elif keydown(4):af=True
- X(s)
+ while not keydown(4):
+  draw_string('>'if s==1 else' ',90,95);draw_string('>'if s==2 else' ',90,125)
+  if keydown(1):s=1
+  elif keydown(2):s=2
+  sleep(0.1)
+ while keydown(4):sleep(0.05)
+ X('1_player'if s==1 else'2_player')
 def M(ae):
  fill_rect(222,46,56,40,(255,255,255));draw_string('turn:',224,49)
  if ae==1:draw_string('black',224,67)
  else:draw_string('white',224,67)
- draw_string('update:',4,4);draw_string('1.2',75,4)
-I=V(g)
+V()
