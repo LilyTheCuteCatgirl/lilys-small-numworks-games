@@ -1,7 +1,7 @@
 from kandinsky import fill_rect as F0,draw_string as S
 from ion import*;k=keydown
 from time import sleep as t
-L=('/F/>/G', '/68/>@/G', 'F/68/>@/G', '>?/58/=@/F', '?@/56/=>/G')
+L=('6Y~8X~=O~<','4<HL~0T~6P~5','04>EFGLMN~5TV~8@P~9','17>@LXY~49=~GNP~?','-./ADGLQ~089T~5=FO~4')
 W=(245,245,245)
 B=(15,19,30)
 F=(49,55,70)
@@ -12,7 +12,7 @@ P=(55,235,207)
 K=(KEY_UP,KEY_DOWN,KEY_LEFT,KEY_RIGHT)
 D=(-8,8,-1,1)
 def u(v):
- a,b,c,p=L[v].split('/')
+ a,b,c,p=L[v].split('~')
  a=[i for i in range(64)if i//8 in(0,7)or i%8 in(0,7)or chr(i+35)in a]
  return a,[ord(q)-35 for q in b],[ord(q)-35 for q in c],ord(p)-35
 def d(v,a,b,c,p,s):
